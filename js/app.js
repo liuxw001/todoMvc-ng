@@ -89,6 +89,16 @@
 			$scope.currentId = -1;
 		};
 		/**
+		 * 全选
+		 */
+		let now = true;
+		$scope.toggleAll = function () {
+			for (var i = 0; i < $scope.todos.length; i++) {
+				$scope.todos[i].isCompleted = now;
+			}
+			now = !now;
+		};
+		/**
 		 * 获取ID,避免ID重复
 		 */
 		function getId() {
